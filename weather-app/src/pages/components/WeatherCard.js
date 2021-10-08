@@ -2,7 +2,7 @@ import { Flex, Text, Switch, Stack, Skeleton } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-const toFarenheit = (degrees) => 1.8 * degrees + 32;
+const toFarenheit = (degrees) => (1.8 * degrees + 32).toFixed(2);
 
 const WeatherCard = ({ city }) => {
   const [unit, setUnit] = useState(false);
@@ -32,7 +32,7 @@ const WeatherCard = ({ city }) => {
 
   useEffect(() => {
     getCityWeather();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [city]);
 
   return (
